@@ -31,9 +31,6 @@ keymap.set(
   { desc = "move the cursor to last charactor of line", silent = true, noremap = true }
 )
 
--- redo.
-keymap.set("n", "U", "<C-r>", { desc = "redo", silent = true, noremap = true })
-
 -- paste without overwriting
 keymap.set("v", "p", "P", { desc = "paste without overiding existing register", silent = true, noremap = true })
 
@@ -45,3 +42,8 @@ keymap.set("n", "<C-a>", "ggVG", { desc = "select all", silent = true, noremap =
 
 -- enter + a to select all
 keymap.set("n", "<CR>a", "ggVG", { desc = "select all", silent = true, noremap = true })
+
+if not vim.g.vscode then
+  -- redo.
+  keymap.set("n", "U", "<C-r>", { desc = "redo", silent = true, noremap = true })
+end
